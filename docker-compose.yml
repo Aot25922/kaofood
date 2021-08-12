@@ -8,7 +8,7 @@ services:
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_ROOT_HOST: 'localhost'
       MYSQL_USER: int221
-      MYSQL_PASSWORD: xt,[A#h+Zf,vMJ;e)8mV
+      MYSQL_PASSWORD: t$ATu!YL2K=nez=T
     volumes:
       - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
       - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
