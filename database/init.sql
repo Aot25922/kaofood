@@ -1,3 +1,7 @@
+DROP SCHEMA IF EXISTS `9shoes` ;
+CREATE SCHEMA IF NOT EXISTS `9shoes` DEFAULT CHARACTER SET utf8 ;
+USE `9shoes` ;
+
 DROP TABLE orderDetail;
 DROP TABLE user;
 DROP TABLE userDetail;
