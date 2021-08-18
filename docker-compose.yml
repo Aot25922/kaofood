@@ -3,15 +3,18 @@ services:
   mysql:
     container_name: int222-mysql
     image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_ROOT_HOST: 'localhost'
-      MYSQL_USER: int221
-      MYSQL_PASSWORD: t$ATu!YL2K=nez=T
+      MYSQL_USER: int222
+      MYSQL_PASSWORD: (<G6&j9d8vdV!_+J
     volumes:
       - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
-      - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
+  #    - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
+    ports:
+        - "3306:3306"
     networks:
         - int222-network
   # spring:
