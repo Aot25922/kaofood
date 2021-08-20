@@ -14,14 +14,15 @@ CREATE TABLE userDetail (
     userDetailId    CHAR(10) 	NOT NULL,
     fname    		VARCHAR(45) NOT NULL,
     lname    		VARCHAR(45) NOT NULL,
-    dob				Date 		NOT NULL,
+    email			VARCHAR(50) NOT NULL,
+    phone           VARCHAR(10) NOT NULL,
     address			VARCHAR(200),
     role			VARCHAR(15) NOT NULL,
     CONSTRAINT user_detail_pk PRIMARY KEY ( userDetailId )
 );
 
 CREATE TABLE user (
-    userId    		VARCHAR(10) NOT NULL,
+    userId    	    CHAR(10) NOT NULL,
     userName    	VARCHAR(45) NOT NULL,
     password    	VARCHAR(45) NOT NULL,
     userDetailId    CHAR(10) 	NOT NULL,
