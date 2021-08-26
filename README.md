@@ -1,3 +1,3 @@
 # KaoFood
-front-end   :   https://kaofood.netlify.app
-sql-server  :   23.97.60.27:3306
+front-end   :   https://kaofood.redirectme.net
+sql-server  :   kaofood-db.database.windows.net (int222/uBeS2bwTZe9XW42v)
