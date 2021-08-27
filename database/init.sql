@@ -27,9 +27,9 @@ CREATE TABLE [user] (
 );
 
 CREATE TABLE [type] (
-    typeId    		CHAR(10) 	NOT NULL,
-    typeName    	VARCHAR(20) NOT NULL,
-    image			VARCHAR(50) NOT NULL,
+    typeId    		INT IDENTITY(1,1) 	NOT NULL,
+    typeName    	VARCHAR(20)         NOT NULL,
+    image			VARCHAR(50)         NOT NULL,
     description    	VARCHAR(100),
     CONSTRAINT type_pk PRIMARY KEY ( typeId )
 );
@@ -40,7 +40,7 @@ CREATE TABLE [menu] (
     price    		DECIMAL(5,2) 	  NOT NULL,
     description    	VARCHAR(1000) 	  NOT NULL,
     image			VARCHAR(50) 	  NOT NULL,
-    typeId			CHAR(10) 		  NOT NULL,
+    typeId			INT 		        NOT NULL,
     CONSTRAINT menu_pk PRIMARY KEY ( menuId ),
     CONSTRAINT type_fk FOREIGN KEY ( typeId ) REFERENCES [type] ( typeId )
 );
