@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS [order];
 DROP TABLE IF EXISTS [user] ;
 DROP TABLE IF EXISTS [userDetail] ;
 DROP TABLE IF EXISTS [menu] ;
-DROP TABLE IF EXISTS [type] ;
+DROP TABLE IF EXISTS [category] ;
 
 
 CREATE TABLE userDetail (
@@ -26,12 +26,12 @@ CREATE TABLE [user] (
     CONSTRAINT user_detail_fk FOREIGN KEY ( userDetailId ) REFERENCES userDetail ( userDetailId )
 );
 
-CREATE TABLE [type] (
-    typeId    		INT IDENTITY(1,1) 	NOT NULL,
-    typeName    	VARCHAR(20)         NOT NULL,
+CREATE TABLE [category] (
+    cateId    		INT IDENTITY(1,1) 	NOT NULL,
+    cateName    	VARCHAR(20)         NOT NULL,
     image			VARCHAR(50)         NOT NULL,
     description    	VARCHAR(100),
-    CONSTRAINT type_pk PRIMARY KEY ( typeId )
+    CONSTRAINT cate_pk PRIMARY KEY ( cateId )
 );
 
 CREATE TABLE [menu] (
@@ -40,9 +40,9 @@ CREATE TABLE [menu] (
     price    		DECIMAL(5,2) 	  NOT NULL,
     description    	VARCHAR(1000) 	  NOT NULL,
     image			VARCHAR(50) 	  NOT NULL,
-    typeId			INT 		        NOT NULL,
+    cateId			INT 		        NOT NULL,
     CONSTRAINT menu_pk PRIMARY KEY ( menuId ),
-    CONSTRAINT type_fk FOREIGN KEY ( typeId ) REFERENCES [type] ( typeId )
+    CONSTRAINT cate_fk FOREIGN KEY ( cateId ) REFERENCES category ( cateId )
 );
 
 CREATE TABLE [order] (
