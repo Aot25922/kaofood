@@ -7,7 +7,7 @@ INSERT INTO [USER](email, password, userDetailId) VALUES ('admin', 'password', 1
 INSERT INTO [USER](email, password, userDetailId) VALUES ('tu@mail.com', 'k904112', 2);
 
 -- Type
-INSERT INTO [TYPE](typeName, image, description) VALUES ('Noodle', '/images/type/noode.png', null);
+INSERT INTO [TYPE](typeName, image, description) VALUES ('Noodle', '/images/type/noodle.png', null);
 INSERT INTO [TYPE](typeName, image, description) VALUES ('Soup', '/images/type/soup.png', null);
 
 -- Menu
