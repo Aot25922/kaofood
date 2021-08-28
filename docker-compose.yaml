@@ -13,7 +13,7 @@ services:
       MYSQL_PASSWORD: Yu`2rapD2,eUuq)T
     volumes:
       - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
-      - "./database/data.sql:/docker-entrypoint-initdb.d/2.sql"
+      - "./database/insert.sql:/docker-entrypoint-initdb.d/2.sql"
     networks:
         - int222-network
   back-end:
@@ -21,7 +21,7 @@ services:
     image: ghcr.io/int222-31-33-43/kaofood_back-end:latest
     restart: always
     ports:
-      - "8080:8088"
+      - "8080:8080"
     depends_on:
       - db
     networks:
