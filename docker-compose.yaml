@@ -26,7 +26,7 @@ services:
       - int222-network
   web:
     container_name: int222_web
-    image: ghcr.io/int222-31-33-43/kaofood_front-end:latest
+    image: ghcr.io/int222-31-33-43/kaofood_web:latest
     restart: always
     ports:
       - "80:80"
