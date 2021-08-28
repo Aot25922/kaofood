@@ -25,7 +25,7 @@ services:
     depends_on:
       - db
     networks:
-      - int221-network
+      - int222-network
   front-end:
     container_name: int222_front-end
     image: ghcr.io/int222-31-33-43/kaofood_front-end:latest
