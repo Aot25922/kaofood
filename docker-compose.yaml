@@ -24,8 +24,8 @@ services:
       - db
     networks:
       - int222-network
-  frontend:
-    container_name: int222_front-end
+  web:
+    container_name: int222_web
     image: ghcr.io/int222-31-33-43/kaofood_front-end:latest
     restart: always
     ports:
