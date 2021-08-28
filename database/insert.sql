@@ -1,10 +1,6 @@
--- UserDetail
-INSERT INTO [USERDETAIL](fname, lname, phone, address, role) VALUES ('President', 'CEO', '0-112-2021-2564', 'KaoHome', 'Admin');
-INSERT INTO [USERDETAIL](fname, lname, phone, address, role) VALUES ('Tutoom', 'Manyriver', '0922253239', 'Home', 'Customer');
-
 -- User 
-INSERT INTO [USER](email, password, userDetailId) VALUES ('admin', 'password', 1);
-INSERT INTO [USER](email, password, userDetailId) VALUES ('tu@mail.com', 'k904112', 2);
+INSERT INTO [USER](email, password, fname, lname, phone, address, role) VALUES ('admin', 'password', 'President', 'CEO', '0-112-2021-2564', 'KaoHome', 'Admin');
+INSERT INTO [USER](email, password, fname, lname, phone, address, role) VALUES ('tu@mail.com', '904112', 'Tutoom', 'Manyriver', '0922253239', 'Home', 'Customer');
 
 -- Type
 INSERT INTO [CATEGORY](cateName, image, description) VALUES ('Noodle', '/images/type/noodle.png', null);
