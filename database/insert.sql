@@ -1,6 +1,6 @@
 USE kaofood;
 -- User 
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('admin', 'password', 'President', 'CEO', '0-112-2021-2564', 'KaoHome', 'Admin');
+INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('admin', 'admin', 'President', 'CEO', '0-112-2021-2564', 'KaoHome', 'Admin');
 INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('tu@mail.com', '904112', 'Tutoom', 'Manyriver', '0922253239', 'Home', 'Customer');
 
 -- Type

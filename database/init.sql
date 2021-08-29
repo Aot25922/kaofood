@@ -2,7 +2,9 @@ GRANT ALL ON *.* to 'int222'@'%' WITH GRANT OPTION;
 DROP SCHEMA IF EXISTS `kaofood` ;
 CREATE SCHEMA IF NOT EXISTS `kaofood` DEFAULT CHARACTER SET utf8 ;
 USE kaofood;
+DROP TABLE IF EXISTS `orderDetail`;
 DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `status`;
 DROP TABLE IF EXISTS `user` ;
 DROP TABLE IF EXISTS `menu` ;
 DROP TABLE IF EXISTS `category` ;
@@ -40,6 +42,13 @@ CREATE TABLE `menu` (
     CONSTRAINT cate_fk FOREIGN KEY ( cateId ) REFERENCES category ( cateId )
 );
 
+CREATE TABLE `status` (
+    statusId    INT					NOT NULL AUTO_INCREMENT,
+    statusName VARCHAR(30)          NOT NULL,
+    CONSTRAINT status_pk PRIMARY KEY ( statusId ),
+    CONSTRAINT status_name UNIQUE ( statusName )
+);
+
 CREATE TABLE `order` (
     orderId    INT					NOT NULL AUTO_INCREMENT,
     totalPrice DECIMAL(6,2)         NOT NULL,
@@ -48,4 +57,12 @@ CREATE TABLE `order` (
     CONSTRAINT order_pk PRIMARY KEY ( orderId ),
     CONSTRAINT user_fk  FOREIGN KEY ( userId ) REFERENCES `user` ( userId ),
     CONSTRAINT menu_fk  FOREIGN KEY ( menuId ) REFERENCES `menu` ( menuId )
+);
+
+CREATE TABLE `orderDetail` (
+    orderId    INT			NOT NULL,
+    menuId	   INT          NOT NULL,
+    CONSTRAINT order_detail_pk PRIMARY KEY ( orderId, menuId ),
+    CONSTRAINT order_detail_fk FOREIGN KEY ( orderId ) REFERENCES `order` ( orderId ),
+    CONSTRAINT menu_detail_fk FOREIGN KEY ( menuId ) REFERENCES `menu` ( menuId )
 );
