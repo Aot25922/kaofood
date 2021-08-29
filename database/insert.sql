@@ -33,3 +33,12 @@ INSERT INTO `menu`(menuName, price, description, image, cateId) VALUES ('Fried V
 INSERT INTO `menu`(menuName, price, description, image, cateId) VALUES ('Kai Med Ma Muang', 100.00, 'Kai med ma muang is loved by locals and foreigners alike. This sweet and flavourful dish is stir-fried chicken with cashew nuts, soy sauce, honey, onions, chillies, pepper, mushrooms, basically whatever vegetables the chef has on hand. Simple, yet very tasty.', '/images/menu/', 4);
 INSERT INTO `menu`(menuName, price, description, image, cateId) VALUES ('Thai Omelette', 25.00, 'his type of Thai-style omelet features multiple soft inner layers and crispy edges. It''s made of very few simple ingredients and, though some attention is needed when it comes to technique, the overall process is very quick and easy. Lots of smoking hot oil is necessary in ensuring success.', '/images/menu/thaiOmelette.jpg', 4);
 INSERT INTO `menu`(menuName, price, description, image, cateId) VALUES ('Mango and Sticky Rice', 80.00, 'Looking for dessert? Look no further than the all-time crowd pleaser of mango and sticky rice. Kao niew ma muang is simple but extremely delicious, made with sticky rice, fresh mango slices, and lashings of sweet condensed milk.', '/images/menu/mangoAndStickyRice', 5);
+
+-- Status
+INSERT INTO `status`(statusName) VALUES ('Receive Order');
+-- Order
+INSERT INTO `order`(totalPrice, statusId) VALUES (112.12,1);
+-- OrderDetail
+INSERT INTO `orderDetail`(orderId, MenuId) VALUES (1,1);
+INSERT INTO `orderDetail`(orderId, MenuId) VALUES (1,2);
+INSERT INTO `orderDetail`(orderId, MenuId) VALUES (1,3);
