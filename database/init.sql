@@ -52,15 +52,17 @@ CREATE TABLE `status` (
 CREATE TABLE `order` (
     orderId    			INT					NOT NULL AUTO_INCREMENT,
     totalPrice 			DECIMAL(6,2)        NOT NULL,
+    userId				INT					NOT NULL,
     statusId			INT					NOT NULL,
     CONSTRAINT order_pk PRIMARY KEY ( orderId ),
+    CONSTRAINT user_fk  FOREIGN KEY ( userId ) REFERENCES `user` ( userId ),
     CONSTRAINT status_fk  FOREIGN KEY ( statusId ) REFERENCES `status` ( statusId )
 );
 
 CREATE TABLE `orderDetail` (
     orderId    		INT			NOT NULL,
     menuId	   		INT         NOT NULL,
-    serving			int			NOT NULL,
+    serving			INT			NOT NULL,
     CONSTRAINT order_detail_pk PRIMARY KEY ( orderId,menuId ),
     CONSTRAINT order_fk FOREIGN KEY ( orderId ) REFERENCES `order` ( orderId ),
     CONSTRAINT menu_fk  FOREIGN KEY ( menuId ) REFERENCES `menu` ( menuId )
