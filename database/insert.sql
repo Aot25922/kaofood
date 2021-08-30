@@ -39,6 +39,6 @@ INSERT INTO `status`(statusName) VALUES ('Receive Order');
 -- Order
 INSERT INTO `order`(totalPrice, statusId) VALUES (112.12,1);
 -- OrderDetail
-INSERT INTO `orderDetail`(orderId, MenuId) VALUES (1,1);
-INSERT INTO `orderDetail`(orderId, MenuId) VALUES (1,2);
-INSERT INTO `orderDetail`(orderId, MenuId) VALUES (1,3);
+INSERT INTO `orderDetail`(orderId, MenuId, serving) VALUES (1, 1, 1);
+INSERT INTO `orderDetail`(orderId, MenuId, serving) VALUES (1, 2, 2);
+INSERT INTO `orderDetail`(orderId, MenuId, serving) VALUES (1, 3, 3);

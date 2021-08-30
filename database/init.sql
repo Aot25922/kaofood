@@ -60,6 +60,7 @@ CREATE TABLE `order` (
 CREATE TABLE `orderDetail` (
     orderId    		INT			NOT NULL,
     menuId	   		INT         NOT NULL,
+    serving			int			NOT NULL,
     CONSTRAINT order_detail_pk PRIMARY KEY ( orderId,menuId ),
     CONSTRAINT order_fk FOREIGN KEY ( orderId ) REFERENCES `order` ( orderId ),
     CONSTRAINT menu_fk  FOREIGN KEY ( menuId ) REFERENCES `menu` ( menuId )
