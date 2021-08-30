@@ -38,7 +38,7 @@ INSERT INTO `menu`(name, price, description, image, cateId) VALUES ('Mango and S
 INSERT INTO `status`(name) VALUES ('Receive Order');
 
 -- Order
-INSERT INTO `order`(totalPrice, statusId) VALUES (112.12,1);
+INSERT INTO `order`(totalPrice,userId, statusId) VALUES (112.12,1,1);
 
 -- OrderDetail
 INSERT INTO `orderDetail`(orderId, menuId, serving) VALUES (1, 1, 1);
