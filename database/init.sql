@@ -61,10 +61,11 @@ CREATE TABLE `order` (
 );
 
 CREATE TABLE `orderDetail` (
+	id				INT			NOT NULL AUTO_INCREMENT,
     orderId    		INT			NOT NULL,
     menuId	   		INT         NOT NULL,
-    serving			INT			NOT NULL,
-    CONSTRAINT order_detail_pk PRIMARY KEY ( orderId,menuId ),
+    count			INT			NOT NULL,
+    CONSTRAINT order_detail_pk PRIMARY KEY ( id ),
     CONSTRAINT order_fk FOREIGN KEY ( orderId ) REFERENCES `order` ( id ),
     CONSTRAINT menu_fk  FOREIGN KEY ( menuId ) REFERENCES `menu` ( id )
 );
