@@ -1,7 +1,7 @@
 version: '3.3'
 services:
   db:
-    container_name: int222-mysql
+    container_name: int222_mysql
     image: mysql:latest
     restart: always
     ports:
