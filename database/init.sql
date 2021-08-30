@@ -10,7 +10,7 @@ DROP TABLE IF EXISTS `menu` ;
 DROP TABLE IF EXISTS `category` ;
 
 CREATE TABLE `user` (
-    userId    	    INT                 NOT NULL AUTO_INCREMENT,
+    id    	    	INT                 NOT NULL AUTO_INCREMENT,
     email    	    VARCHAR(45)         NOT NULL,
     password    	VARCHAR(45)         NOT NULL,
     fname    		VARCHAR(45)         NOT NULL,
@@ -18,45 +18,45 @@ CREATE TABLE `user` (
     phone           VARCHAR(15)         NOT NULL,
     address			VARCHAR(200),
     role			VARCHAR(15)         NOT NULL,
-	CONSTRAINT user_pk PRIMARY KEY ( userId ),
+	CONSTRAINT user_pk PRIMARY KEY ( id ),
     CONSTRAINT user_email_uk UNIQUE ( email ),
     CONSTRAINT user_phone_uk UNIQUE ( phone )
 );
 
 CREATE TABLE `category` (
-    cateId    		INT 				NOT NULL AUTO_INCREMENT,
-    cateName    	VARCHAR(20)         NOT NULL,
+    id    			INT 				NOT NULL AUTO_INCREMENT,
+    name    		VARCHAR(20)         NOT NULL,
     image			VARCHAR(50)         NOT NULL,
     description    	VARCHAR(100),
-    CONSTRAINT cate_pk PRIMARY KEY ( cateId )
+    CONSTRAINT cate_pk PRIMARY KEY ( id )
 );
 
 CREATE TABLE `menu` (
-    menuId    		INT				  NOT NULL AUTO_INCREMENT,
-    menuName    	VARCHAR(45)	 	  NOT NULL,
+    id    			INT				  NOT NULL AUTO_INCREMENT,
+    name    		VARCHAR(45)	 	  NOT NULL,
     price    		DECIMAL(5,2) 	  NOT NULL,
     description    	VARCHAR(1000) 	  NOT NULL,
     image			VARCHAR(50) 	  NOT NULL,
     cateId			INT 		        NOT NULL,
-    CONSTRAINT menu_pk PRIMARY KEY ( menuId ),
-    CONSTRAINT cate_fk FOREIGN KEY ( cateId ) REFERENCES category ( cateId )
+    CONSTRAINT menu_pk PRIMARY KEY ( id ),
+    CONSTRAINT cate_fk FOREIGN KEY ( cateId ) REFERENCES category ( id )
 );
 
 CREATE TABLE `status` (
-    statusId   INT					NOT NULL AUTO_INCREMENT,
-    statusName VARCHAR(30)          NOT NULL,
-    CONSTRAINT status_pk PRIMARY KEY ( statusId ),
-    CONSTRAINT status_name UNIQUE ( statusName )
+    id   	INT					NOT NULL AUTO_INCREMENT,
+    name 	VARCHAR(30)       	NOT NULL,
+    CONSTRAINT status_pk PRIMARY KEY ( id ),
+    CONSTRAINT status_name UNIQUE ( name )
 );
 
 CREATE TABLE `order` (
-    orderId    			INT					NOT NULL AUTO_INCREMENT,
+    id    				INT					NOT NULL AUTO_INCREMENT,
     totalPrice 			DECIMAL(6,2)        NOT NULL,
     userId				INT					NOT NULL,
     statusId			INT					NOT NULL,
-    CONSTRAINT order_pk PRIMARY KEY ( orderId ),
-    CONSTRAINT user_fk  FOREIGN KEY ( userId ) REFERENCES `user` ( userId ),
-    CONSTRAINT status_fk  FOREIGN KEY ( statusId ) REFERENCES `status` ( statusId )
+    CONSTRAINT order_pk PRIMARY KEY ( id ),
+    CONSTRAINT user_fk  FOREIGN KEY ( userId ) REFERENCES `user` ( id ),
+    CONSTRAINT status_fk  FOREIGN KEY ( statusId ) REFERENCES `status` ( id )
 );
 
 CREATE TABLE `orderDetail` (
@@ -64,6 +64,6 @@ CREATE TABLE `orderDetail` (
     menuId	   		INT         NOT NULL,
     serving			INT			NOT NULL,
     CONSTRAINT order_detail_pk PRIMARY KEY ( orderId,menuId ),
-    CONSTRAINT order_fk FOREIGN KEY ( orderId ) REFERENCES `order` ( orderId ),
-    CONSTRAINT menu_fk  FOREIGN KEY ( menuId ) REFERENCES `menu` ( menuId )
+    CONSTRAINT order_fk FOREIGN KEY ( orderId ) REFERENCES `order` ( id ),
+    CONSTRAINT menu_fk  FOREIGN KEY ( menuId ) REFERENCES `menu` ( id )
 );
