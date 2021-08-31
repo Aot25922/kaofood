@@ -38,21 +38,14 @@ INSERT INTO `menu`(name, price, description, image, cateId) VALUES ('Mango and S
 INSERT INTO `status`(name) VALUES ('Receive Order');
 
 -- Order
-<<<<<<< HEAD
-INSERT INTO `order`(totalPrice, userId, statusId) VALUES (112.12, 1, 1);
-INSERT INTO `order`(totalPrice, userId, statusId) VALUES (44.44, 2 , 1);
-=======
-<<<<<<< HEAD
-INSERT INTO `order`(totalPrice, userId, statusId) VALUES (112.12, 2, 1);
-=======
-INSERT INTO `order`(totalPrice,userId, statusId) VALUES (112.12,1,1);
->>>>>>> 768c2f9c7dc6cfb98292edd6a7724ababef56d4c
->>>>>>> 55feaf7f0fe2e7887f16f0072dd0f81c3df51082
+INSERT INTO `orders`(totalPrice, userId, statusId) VALUES (112.12, 1, 1);
+INSERT INTO `orders`(totalPrice, userId, statusId) VALUES (44.44, 2 , 1);
+
 
 -- OrderDetail
-INSERT INTO `orderDetail`(orderId, menuId, count) VALUES (1, 1, 1);
-INSERT INTO `orderDetail`(orderId, menuId, count) VALUES (1, 2, 2);
-INSERT INTO `orderDetail`(orderId, menuId, count) VALUES (1, 3, 3);
-INSERT INTO `orderDetail`(orderId, menuId, count) VALUES (2, 4, 1);
-INSERT INTO `orderDetail`(orderId, menuId, count) VALUES (2, 5, 2);
-INSERT INTO `orderDetail`(orderId, menuId, count) VALUES (2, 6, 3);
+INSERT INTO `orderDetail`(ordersId, menuId, count) VALUES (1, 1, 1);
+INSERT INTO `orderDetail`(ordersId, menuId, count) VALUES (1, 2, 2);
+INSERT INTO `orderDetail`(ordersId, menuId, count) VALUES (1, 3, 3);
+INSERT INTO `orderDetail`(ordersId, menuId, count) VALUES (2, 4, 1);
+INSERT INTO `orderDetail`(ordersId, menuId, count) VALUES (2, 5, 2);
+INSERT INTO `orderDetail`(ordersId, menuId, count) VALUES (2, 6, 3);

@@ -4,7 +4,7 @@ DROP SCHEMA IF EXISTS `kaofood` ;
 CREATE SCHEMA IF NOT EXISTS `kaofood` DEFAULT CHARACTER SET utf8 ;
 USE kaofood;
 DROP TABLE IF EXISTS `orderDetail`;
-DROP TABLE IF EXISTS `order`;
+DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `status`;
 DROP TABLE IF EXISTS `user` ;
 DROP TABLE IF EXISTS `menu` ;
@@ -50,22 +50,22 @@ CREATE TABLE `status` (
     CONSTRAINT status_name UNIQUE ( name )
 );
 
-CREATE TABLE `order` (
+CREATE TABLE `orders` (
     id    				INT					NOT NULL AUTO_INCREMENT,
     totalPrice 			DECIMAL(6,2)        NOT NULL,
     userId				INT					NOT NULL,
     statusId			INT					NOT NULL,
-    CONSTRAINT order_pk PRIMARY KEY ( id ),
+    CONSTRAINT orders_pk PRIMARY KEY ( id ),
     CONSTRAINT user_fk  FOREIGN KEY ( userId ) REFERENCES `user` ( id ),
     CONSTRAINT status_fk  FOREIGN KEY ( statusId ) REFERENCES `status` ( id )
 );
 
 CREATE TABLE `orderDetail` (
 	id				INT			NOT NULL AUTO_INCREMENT,
-    orderId    		INT			NOT NULL,
+    ordersId    	INT			NOT NULL,
     menuId	   		INT         NOT NULL,
     count			INT			NOT NULL,
     CONSTRAINT order_detail_pk PRIMARY KEY ( id ),
-    CONSTRAINT order_fk FOREIGN KEY ( orderId ) REFERENCES `order` ( id ),
+    CONSTRAINT orders_fk FOREIGN KEY ( ordersId ) REFERENCES `orders` ( id ),
     CONSTRAINT menu_fk  FOREIGN KEY ( menuId ) REFERENCES `menu` ( id )
 );
