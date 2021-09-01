@@ -4,11 +4,11 @@ INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES (
 INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('tu@mail.com', '904112', 'Tutoom', 'Manyriver', '0922253239', 'Home', 'Customer');
 
 -- Type
-INSERT INTO `category`(name, image, description) VALUES ('Noodle', '/images/type/noodle.png', null);
-INSERT INTO `category`(name, image, description) VALUES ('Soup', '/images/type/soup.png', null);
-INSERT INTO `category`(name, image, description) VALUES ('Salad', '/images/type/salad.png', null);
-INSERT INTO `category`(name, image, description) VALUES ('Fried', '/images/type/fried.png', null);
-INSERT INTO `category`(name, image, description) VALUES ('Dessert', '/images/type/dessert.png', null);
+INSERT INTO `category`(name, image, description) VALUES ('Noodle', 'https://image.flaticon.com/icons/png/512/4389/4389151.png', null);
+INSERT INTO `category`(name, image, description) VALUES ('Soup', 'https://img-premium.flaticon.com/png/512/2387/premium/2387954.png?token=exp=1630487730~hmac=1db80b1e2c3b41ac9a9ddd663219fda1', null);
+INSERT INTO `category`(name, image, description) VALUES ('Salad', 'https://img-premium.flaticon.com/png/512/1617/premium/1617564.png?token=exp=1630487623~hmac=42853c374e8ddcc2c66d9ee0732816f5', null);
+INSERT INTO `category`(name, image, description) VALUES ('Fried', 'https://image.flaticon.com/icons/png/512/3449/3449449.png', null);
+INSERT INTO `category`(name, image, description) VALUES ('Dessert', 'https://img-premium.flaticon.com/png/512/2770/premium/2770077.png?token=exp=1630487780~hmac=344f570779daab6509062cdc0f9b3117', null);
 
 -- Menu
 -- INSERT INTO [MENU](menuName, price, description, image, cateId) VALUES ('name', 10, 'des', '/images/menu/', 0);

@@ -27,7 +27,7 @@ CREATE TABLE `user` (
 CREATE TABLE `category` (
     id    			INT 				NOT NULL AUTO_INCREMENT,
     name    		VARCHAR(20)         NOT NULL,
-    image			VARCHAR(50)         NOT NULL,
+    image			VARCHAR(500)         NOT NULL,
     description    	VARCHAR(100),
     CONSTRAINT cate_pk PRIMARY KEY ( id )
 );
