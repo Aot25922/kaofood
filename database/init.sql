@@ -17,7 +17,7 @@ CREATE TABLE `user` (
     fname    		VARCHAR(45)         NOT NULL,
     lname    		VARCHAR(45)         NOT NULL,
     phone           VARCHAR(15)         NOT NULL,
-    address			VARCHAR(200),
+    address			VARCHAR(200)        NOT NULL,
     role			VARCHAR(15)         NOT NULL,
 	CONSTRAINT user_pk PRIMARY KEY ( id ),
     CONSTRAINT user_email_uk UNIQUE ( email ),
