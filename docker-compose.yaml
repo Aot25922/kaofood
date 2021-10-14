@@ -20,8 +20,6 @@ services:
     container_name: int222_back-end
     image: ghcr.io/int222-31-33-43/kaofood_back-end:latest
     restart: always
-    ports:
-      - "8080:8080"
     depends_on:
       - db
     networks:
