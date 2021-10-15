@@ -30,8 +30,6 @@ services:
     container_name: int222_dev_web
     image: ghcr.io/int222-31-33-43/kaofood_web:dev
     restart: always
-    depends_on:
-      - dev-backend
     networks:
       - int222-network
   backend:
@@ -50,6 +48,7 @@ services:
       - "443:443"
     depends_on:
       - backend
+      - dev-backend
       - dev-web
     networks:
       - int222-network
