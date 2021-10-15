@@ -1,7 +1,7 @@
 USE kaofood;
 -- User 
 INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('admin', 'admin', 'President', 'CEO', '0-112-2021-2564', 'KaoHome', 'Admin');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('tu@mail.com', '904112', 'Tutoom', 'Manyriver', '0922253239', 'Home', 'Customer');
+INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('tu@mail.com', '904112', 'Tutoom', 'Manyriver', '0922253239', 'Home', 'Member');
 
 -- Type
 INSERT INTO `category`(name, image, description) VALUES ('Noodle', 'https://image.flaticon.com/icons/png/512/4389/4389151.png', null);
