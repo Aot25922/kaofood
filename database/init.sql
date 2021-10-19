@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS `menu` ;
 DROP TABLE IF EXISTS `category` ;
 
 CREATE TABLE `user` (
-    id    	    	INT                 NOT NULL,
+    id    	    	INT                 NOT NULL AUTO_INCREMENT,
     email    	    VARCHAR(45)         NOT NULL,
     password    	VARCHAR(45)         NOT NULL,
     fname    		VARCHAR(45)         NOT NULL,
@@ -25,33 +25,33 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `category` (
-    id    			INT 				NOT NULL,
+    id    			INT 				NOT NULL AUTO_INCREMENT,
     name    		VARCHAR(20)         NOT NULL,
-    image			VARCHAR(500)         NOT NULL,
+    image			VARCHAR(500)        NOT NULL,
     description    	VARCHAR(100),
     CONSTRAINT cate_pk PRIMARY KEY ( id )
 );
 
 CREATE TABLE `menu` (
-    id    			INT				  NOT NULL,
+    id    			INT				  NOT NULL AUTO_INCREMENT,
     name    		VARCHAR(45)	 	  NOT NULL,
     price    		DECIMAL(5,2) 	  NOT NULL,
     description    	VARCHAR(1000) 	  NOT NULL,
     image			VARCHAR(50) 	  NOT NULL,
-    cateId			INT 		        NOT NULL,
+    cateId			INT 		      NOT NULL,
     CONSTRAINT menu_pk PRIMARY KEY ( id ),
     CONSTRAINT cate_fk FOREIGN KEY ( cateId ) REFERENCES category ( id )
 );
 
 CREATE TABLE `status` (
-    id   	INT					NOT NULL,
+    id   	INT					NOT NULL AUTO_INCREMENT,
     name 	VARCHAR(30)       	NOT NULL,
     CONSTRAINT status_pk PRIMARY KEY ( id ),
     CONSTRAINT status_name UNIQUE ( name )
 );
 
 CREATE TABLE `orders` (
-    id    				INT					NOT NULL,
+    id    				CHAR(8)			NOT NULL,
     totalPrice 			DECIMAL(6,2)        NOT NULL,
     userId				INT					NOT NULL,
     statusId			INT					NOT NULL,
@@ -61,8 +61,8 @@ CREATE TABLE `orders` (
 );
 
 CREATE TABLE `orderDetail` (
-	id				INT			NOT NULL,
-    ordersId    	INT			NOT NULL,
+	id				CHAR(8)		NOT NULL,
+    ordersId    	CHAR(8)			NOT NULL,
     menuId	   		INT         NOT NULL,
     count			INT			NOT NULL,
     CONSTRAINT order_detail_pk PRIMARY KEY ( id ),
