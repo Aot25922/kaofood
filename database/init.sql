@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS `menu` ;
 DROP TABLE IF EXISTS `category` ;
 
 CREATE TABLE `user` (
-    id    	    	INT                 NOT NULL AUTO_INCREMENT,
+    id    	    	INT                 NOT NULL,
     email    	    VARCHAR(45)         NOT NULL,
     password    	VARCHAR(45)         NOT NULL,
     fname    		VARCHAR(45)         NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `user` (
 );
 
 CREATE TABLE `category` (
-    id    			INT 				NOT NULL AUTO_INCREMENT,
+    id    			INT 				NOT NULL,
     name    		VARCHAR(20)         NOT NULL,
     image			VARCHAR(500)         NOT NULL,
     description    	VARCHAR(100),
@@ -33,7 +33,7 @@ CREATE TABLE `category` (
 );
 
 CREATE TABLE `menu` (
-    id    			INT				  NOT NULL AUTO_INCREMENT,
+    id    			INT				  NOT NULL,
     name    		VARCHAR(45)	 	  NOT NULL,
     price    		DECIMAL(5,2) 	  NOT NULL,
     description    	VARCHAR(1000) 	  NOT NULL,
@@ -44,14 +44,14 @@ CREATE TABLE `menu` (
 );
 
 CREATE TABLE `status` (
-    id   	INT					NOT NULL AUTO_INCREMENT,
+    id   	INT					NOT NULL,
     name 	VARCHAR(30)       	NOT NULL,
     CONSTRAINT status_pk PRIMARY KEY ( id ),
     CONSTRAINT status_name UNIQUE ( name )
 );
 
 CREATE TABLE `orders` (
-    id    				INT					NOT NULL AUTO_INCREMENT,
+    id    				INT					NOT NULL,
     totalPrice 			DECIMAL(6,2)        NOT NULL,
     userId				INT					NOT NULL,
     statusId			INT					NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE `orders` (
 );
 
 CREATE TABLE `orderDetail` (
-	id				INT			NOT NULL AUTO_INCREMENT,
+	id				INT			NOT NULL,
     ordersId    	INT			NOT NULL,
     menuId	   		INT         NOT NULL,
     count			INT			NOT NULL,
