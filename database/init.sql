@@ -13,7 +13,7 @@ DROP TABLE IF EXISTS `category` ;
 CREATE TABLE `user` (
     id    	    	INT                 NOT NULL AUTO_INCREMENT,
     email    	    VARCHAR(45)         NOT NULL,
-    password    	VARCHAR(45)         NOT NULL,
+    password    	VARCHAR(100)        NOT NULL,
     fname    		VARCHAR(45)         NOT NULL,
     lname    		VARCHAR(45)         NOT NULL,
     phone           VARCHAR(15)         NOT NULL,
@@ -51,7 +51,7 @@ CREATE TABLE `status` (
 );
 
 CREATE TABLE `orders` (
-    id    				CHAR(8)			NOT NULL,
+    id    				INT					NOT NULL AUTO_INCREMENT,
     totalPrice 			DECIMAL(6,2)        NOT NULL,
     userId				INT					NOT NULL,
     statusId			INT					NOT NULL,
@@ -61,8 +61,8 @@ CREATE TABLE `orders` (
 );
 
 CREATE TABLE `orderDetail` (
-	id				CHAR(8)		NOT NULL,
-    ordersId    	CHAR(8)			NOT NULL,
+	id				INT			NOT NULL AUTO_INCREMENT,
+    ordersId    	INT			NOT NULL,
     menuId	   		INT         NOT NULL,
     count			INT			NOT NULL,
     CONSTRAINT order_detail_pk PRIMARY KEY ( id ),
