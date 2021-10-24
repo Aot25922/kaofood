@@ -7,8 +7,15 @@ DROP TABLE IF EXISTS `orderDetail`;
 DROP TABLE IF EXISTS `orders`;
 DROP TABLE IF EXISTS `status`;
 DROP TABLE IF EXISTS `user` ;
+Drop TABLE IF EXISTS `role`;
 DROP TABLE IF EXISTS `menu` ;
 DROP TABLE IF EXISTS `category` ;
+
+CREATE TABLE `role` (
+    id              INT                 NOT NULL AUTO_INCREMENT,
+    name            VARCHAR(15)         NOT NULL,
+    CONSTRAINT role_pk PRIMARY KEY ( id )
+);
 
 CREATE TABLE `user` (
     id    	    	INT                 NOT NULL AUTO_INCREMENT,
@@ -18,8 +25,9 @@ CREATE TABLE `user` (
     lname    		VARCHAR(45)         NOT NULL,
     phone           VARCHAR(15)         NOT NULL,
     address			VARCHAR(200)        NOT NULL,
-    role			VARCHAR(15)         NOT NULL,
+    roleId			INT                 NOT NULL,
 	CONSTRAINT user_pk PRIMARY KEY ( id ),
+	CONSTRAINT role_fk FOREIGN KEY ( roleId ) REFERENCES `role` ( id ),
     CONSTRAINT user_email_uk UNIQUE ( email ),
     CONSTRAINT user_phone_uk UNIQUE ( phone )
 );

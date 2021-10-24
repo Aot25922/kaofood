@@ -1,14 +1,19 @@
 USE kaofood;
+-- Role
+INSERT INTO `role`(name) VALUES ('Admin');
+INSERT INTO `role`(name) VALUES ('Staff');
+INSERT INTO `role`(name) VALUES ('Member');
+
 -- User 
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('admin', '$2a$12$3RXfDYKBwSmGNuGZ.eTqn.wRYyjzgQcEqsdQKdOVRIL5bzThqYQ0K', 'President', 'Admin', '0-112-2021-2564', 'KaoHome', 'Admin');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('staff', '$2a$12$QNxUkhs4C/xjgytTQLpvBuiY5kcRIXvXqwhBJglVxFOjVN5xg2rDO', 'Staff', 'Staff', '0901234567', 'KaoFood', 'Staff');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('customer', '$2a$12$VBdNqJtnff4pTAgJ3QOJlO/kN16/BKPNjTSRIBs342qGmOY0fLmKe', 'Customer', 'Customer', '00231456', 'This is Member Address', 'Member');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('baltazar.ka@mail.com', 'baltazar', 'Baltazar', 'Kariuki', '0971234567', 'KaoFood', 'Staff');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('tatenda.cha@mail.com', 'tatenda', 'Tatenda', 'Chaudhary', '0911234567', 'India', 'Staff');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('arisztid.caro@mail.com', 'arisztid', 'Arisztid', 'Caro', '0921234567', 'Greek', 'Member');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('ananta.bo@mail.com', 'ananta', 'Ananta', 'Bonomo', '0941234567', 'Thailand', 'Member');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('lada.schu@mail.com', 'ladaschu', 'Lada', 'Schumacher', '0951234567', 'Thailand', 'Member');
-INSERT INTO `user`(email, password, fname, lname, phone, address, role) VALUES ('ayoub.ai@mail.com', 'ayoub', 'Ayoub', 'Aiolfi', '0931234567', 'America', 'Member');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('admin', '$2a$12$3RXfDYKBwSmGNuGZ.eTqn.wRYyjzgQcEqsdQKdOVRIL5bzThqYQ0K', 'President', 'Admin', '0-112-2021-2564', 'KaoHome', '1');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('staff', '$2a$12$QNxUkhs4C/xjgytTQLpvBuiY5kcRIXvXqwhBJglVxFOjVN5xg2rDO', 'Staff', 'Staff', '0901234567', 'KaoFood', '2');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('customer', '$2a$12$VBdNqJtnff4pTAgJ3QOJlO/kN16/BKPNjTSRIBs342qGmOY0fLmKe', 'Customer', 'Customer', '00231456', 'This is Member Address', '2');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('baltazar.ka@mail.com', 'baltazar', 'Baltazar', 'Kariuki', '0971234567', 'KaoFood', '2');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('tatenda.cha@mail.com', 'tatenda', 'Tatenda', 'Chaudhary', '0911234567', 'India', '2');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('arisztid.caro@mail.com', 'arisztid', 'Arisztid', 'Caro', '0921234567', 'Greek', '3');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('ananta.bo@mail.com', 'ananta', 'Ananta', 'Bonomo', '0941234567', 'Thailand', '3');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('lada.schu@mail.com', 'ladaschu', 'Lada', 'Schumacher', '0951234567', 'Thailand', '3');
+INSERT INTO `user`(email, password, fname, lname, phone, address, roleId) VALUES ('ayoub.ai@mail.com', 'ayoub', 'Ayoub', 'Aiolfi', '0931234567', 'America', '3');
 
 -- Type
 INSERT INTO `category`(name, image, description) VALUES ('Noodle', 'https://image.flaticon.com/icons/png/512/4389/4389151.png', null);
