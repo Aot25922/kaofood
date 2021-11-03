@@ -29,13 +29,6 @@ services:
     volumes:
       - ~/kaofood-data/dev-backend:/app/storage:rw
 
-  dev-web:
-    container_name: dev_web
-    image: ghcr.io/int222-31-33-43/kaofood_web:dev
-    restart: always
-    networks:
-      - int222-network
-
   backend:
     container_name: spring
     image: ghcr.io/int222-31-33-43/kaofood_back-end:latest
@@ -58,7 +51,6 @@ services:
     depends_on:
       - backend
       - dev-backend
-      - dev-web
     volumes:
       - ~/kaofood-data/nginx/nginx.conf:/etc/nginx/conf.d/default.conf:rw
       - ~/kaofood-data/nginx/cloudflare/cloudflare.crt:/etc/nginx/certs/cloudflare.crt:ro
