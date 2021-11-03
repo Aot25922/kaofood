@@ -1,5 +1,3 @@
-GRANT ALL ON *.* to 'int222'@'%' WITH GRANT OPTION;
-SET GLOBAL max_connections = 512;
 DROP SCHEMA IF EXISTS `kaofood` ;
 CREATE SCHEMA IF NOT EXISTS `kaofood` DEFAULT CHARACTER SET utf8 ;
 USE kaofood;

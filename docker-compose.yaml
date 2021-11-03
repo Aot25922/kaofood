@@ -1,9 +1,10 @@
 version: '3.3'
 services:
   db:
-    container_name: int222_mysql
+    container_name: mysql
     image: mysql:latest
     restart: always
+    network_mode: "bridge"
     ports:
       - "3306:3306"
     environment:
@@ -15,49 +16,43 @@ services:
       - ~/kaofood-data/mysql:/var/lib/mysql:rw
       # - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
       # - "./database/insert.sql:/docker-entrypoint-initdb.d/2.sql"
-    networks:
-        - int222-network
+
   dev-backend:
-    container_name: int222_dev_back-end
+    container_name: dev_spring
     image: ghcr.io/int222-31-33-43/kaofood_back-end:dev
     restart: always
+    network_mode: "bridge"
     ports:
       - "8080:8080"
     depends_on:
       - db
     volumes:
       - ~/kaofood-data/dev-backend:/app/storage:rw
-    networks:
-      - int222-network
+
   dev-web:
-    container_name: int222_dev_web
+    container_name: dev_web
     image: ghcr.io/int222-31-33-43/kaofood_web:dev
     restart: always
-    networks:
-      - int222-network
+    network_mode: "bridge"
+
   backend:
-    container_name: int222_back-end
+    container_name: spring
     image: ghcr.io/int222-31-33-43/kaofood_back-end:latest
     restart: always
+    network_mode: "bridge"
     depends_on:
       - db
     volumes:
       - ~/kaofood-data/backend:/app/storage:rw
-    networks:
-      - int222-network
+
   web:
-    container_name: int222_web
+    container_name: web
     image: ghcr.io/int222-31-33-43/kaofood_web:latest
     restart: always
+    network_mode: "bridge"
     ports:
       - "443:443"
     depends_on:
       - backend
       - dev-backend
       - dev-web
-    networks:
-      - int222-network
-        
-networks:
-    int222-network:
-      driver: bridge
