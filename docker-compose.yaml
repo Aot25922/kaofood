@@ -12,8 +12,9 @@ services:
       MYSQL_USER: int222
       MYSQL_PASSWORD: Yu`2rapD2,eUuq)T
     volumes:
-      - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
-      - "./database/insert.sql:/docker-entrypoint-initdb.d/2.sql"
+      - ~/kaofood-data/mysql:/var/lib/mysql:rw
+      # - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
+      # - "./database/insert.sql:/docker-entrypoint-initdb.d/2.sql"
     networks:
         - int222-network
   dev-backend:
@@ -24,6 +25,8 @@ services:
       - "8080:8080"
     depends_on:
       - db
+    volumes:
+      - ~/kaofood-data/dev-backend:/app/storage:rw
     networks:
       - int222-network
   dev-web:
@@ -38,6 +41,8 @@ services:
     restart: always
     depends_on:
       - db
+    volumes:
+      - ~/kaofood-data/backend:/app/storage:rw
     networks:
       - int222-network
   web:
