@@ -15,8 +15,6 @@ services:
       MYSQL_PASSWORD: Yu`2rapD2,eUuq)T
     volumes:
       - ~/kaofood-data/mysql:/var/lib/mysql:rw
-      # - "./database/init.sql:/docker-entrypoint-initdb.d/1.sql"
-      # - "./database/insert.sql:/docker-entrypoint-initdb.d/2.sql"
 
   dev-backend:
     container_name: dev_spring
