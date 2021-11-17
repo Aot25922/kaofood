@@ -53,8 +53,8 @@ INSERT INTO `status`(name) VALUES ('Delivering');
 INSERT INTO `status`(name) VALUES ('Arrived');
 
 -- Order
-INSERT INTO `orders`(totalPrice, userId, statusId) VALUES (112.12, 4, 1);
-INSERT INTO `orders`(totalPrice, userId, statusId) VALUES (44.44, 5, 1);
+INSERT INTO `orders`(totalPrice, userId, statusId) VALUES (580.50, 4, 1);
+INSERT INTO `orders`(totalPrice, userId, statusId) VALUES (790.50, 5, 1);
 
 
 -- OrderDetail
