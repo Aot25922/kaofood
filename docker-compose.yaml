@@ -9,7 +9,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      - TZ=Asia/Bangkok
+      TZ: Asia/Bangkok
       MYSQL_ROOT_PASSWORD: mysql
       MYSQL_ROOT_HOST: 'localhost'
       MYSQL_USER: int222
