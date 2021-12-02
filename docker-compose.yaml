@@ -6,8 +6,6 @@ services:
     restart: always
     networks:
       - int222-network
-    ports:
-      - "3306:3306"
     environment:
       TZ: Asia/Bangkok
       MYSQL_ROOT_PASSWORD: mysql
@@ -23,8 +21,6 @@ services:
     restart: always
     networks:
       - int222-network
-    ports:
-      - "8080:8080"
     depends_on:
       - db
     environment:
