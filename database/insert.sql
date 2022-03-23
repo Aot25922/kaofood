@@ -1,4 +1,4 @@
-USE kaofood;
+USE int222_kaofood;
 -- Role
 INSERT INTO `role`(name) VALUES ('Admin');
 INSERT INTO `role`(name) VALUES ('Staff');
