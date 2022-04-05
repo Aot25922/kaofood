@@ -1,3 +1,4 @@
 # KaoFood
-front-end        :   https://dormhub.netlify.app  
-front-end (Dev)  :   https://gentle-plant-0c574c300.1.azurestaticapps.net  
+front-end   :   https://kaofood.works  
+back-end    :   https://kaofood.works/api  
+sql-server  :   db.kaofood.works (int222/Yu`2rapD2,eUuq)T)  
